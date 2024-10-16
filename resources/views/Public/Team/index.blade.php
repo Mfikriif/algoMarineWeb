@@ -4,18 +4,23 @@
 
 @section('content')
 
-<section>
-    <div>
-        @foreach($teams as $tim)
-        <a href="{{route('Teams.show', $tim->Slug)}}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {{$tim->Team_Name}}
-            </h5>
-        </a>
-        @endforeach
-    </div>
-    
-        
-</section>
+    <section>
+        <header>
+            <h1 class=" text-center text-5xl font-semibold mt-16 text-[#08A79A]">Divisi Algomarine</h1>
+        </header>
+
+        <div class="flex flex-row flex-wrap w-5/6 mt-32 justify-center gap-16 mx-auto ">
+            @foreach ($teams as $tim)
+                <a href="{{ route('Teams.show', $tim->Slug) }}" class="w-80 h-56 hover:border border-[#08A79A] rounded-lg">
+                    <h5 class="mt-24 ml-3 font-semibold text-[#08A79A]">
+                        {{ $tim->Team_Name }}
+                    </h5>
+                    <p class="ml-3 mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quasi</p>
+                </a>
+            @endforeach
+        </div>
+
+
+    </section>
 
 @endsection
